@@ -1,0 +1,93 @@
+ * {
+    box-sizing: border-box;
+}
+
+html,
+body,
+.container {
+    height: 100%;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #727eb2;
+    height: 120px;
+    z-index: 99;
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.aside {
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+    right: 0;
+    top: 120px;
+    background-color: #fa895f;
+}
+
+.content {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    top: 120px;
+    left: 10%;
+}
+
+.menu {
+    position: fixed;
+    width: 10%;
+    height: 100vh;
+    left: 0;
+    top: 120px;
+    background-color: #37beaf;
+}
+
+/* .parents {
+    position: relative;
+    max-width: 50%;
+    height: 100vh;
+    border: 3px solid red;
+}
+
+.child {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.aside {
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+    background: lightpink;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    background: green;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100vh;
+    background: red;
+} */
