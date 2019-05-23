@@ -1,93 +1,225 @@
- * {
-    box-sizing: border-box;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-html,
-body,
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 32px;
+  font-size: 18px;
+}
+
 .container {
-    height: 100%;
+  height: 100%;
+  max-width: 90%;
+  margin: auto;
 }
 
-.container {
-    max-width: 90%;
-    margin: auto;
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #727eb2;
+  height: 50px;
+  z-index: 99;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #727eb2;
-    height: 120px;
-    z-index: 99;
+.wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
-main {
-    position: relative;
-    overflow: hidden;
+.menu {
+  position: fixed;
+  width: 10%;
+  height: 100vh;
+  left: 0;
+  top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #37beaf;
 }
 
-.aside {
-    position: fixed;
-    width: 40%;
-    height: 100vh;
-    right: 0;
-    top: 120px;
-    background-color: #fa895f;
+.menu .toggle-button {
+  display: none;
+  position: relative;
+  left: 101%;
+  top: 10px;
+  width: 44px;
+  height: 40px;
+  padding: 4px;
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 15;
+}
+
+.menu .toggle-button:hover {
+  cursor: pointer;
+}
+
+.menu .toggle-button .menu-bar {
+  position: absolute;
+  border-radius: 2px;
+  width: 80%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.menu .toggle-button .menu-bar-top {
+  border: 4px solid #555;
+  border-bottom: none;
+  top: 0;
+}
+
+.menu .toggle-button .menu-bar-middle {
+  height: 4px;
+  background-color: #555;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  top: 4px;
+}
+
+.menu .toggle-button .menu-bar-bottom {
+  border: 4px solid #555;
+  border-top: none;
+  top: 22px;
+}
+
+.menu .button-open .menu-bar-top {
+  -webkit-transform: rotate(45deg) translate(8px, 8px);
+          transform: rotate(45deg) translate(8px, 8px);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.menu .button-open .menu-bar-middle {
+  -webkit-transform: translate(230px);
+          transform: translate(230px);
+  -webkit-transition: .1s ease-in;
+  transition: .1s ease-in;
+  opacity: 0;
+}
+
+.menu .button-open .menu-bar-bottom {
+  -webkit-transform: rotate(-45deg) translate(8px, -7px);
+          transform: rotate(-45deg) translate(8px, -7px);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.menu-wrap {
+  background-color: #37beaf;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 10%;
+  margin-left: -10%;
+  font-size: 1em;
+  font-weight: 700;
+  overflow: auto;
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 10;
+}
+
+.menu-show {
+  margin-left: 0;
+}
+
+.menu-list {
+  margin-top: 50px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menu-list li {
+  list-style-type: none;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .content {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    top: 120px;
-    left: 10%;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  top: 50px;
+  left: 11%;
 }
 
-.menu {
-    position: fixed;
-    width: 10%;
-    height: 100vh;
-    left: 0;
-    top: 120px;
-    background-color: #37beaf;
+.content-main {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/* .parents {
-    position: relative;
-    max-width: 50%;
-    height: 100vh;
-    border: 3px solid red;
+.content-main p {
+  text-align: justify;
 }
 
-.child {
-    position: absolute;
-    top: 0;
-    right: 0;
+.content-map {
+  margin: 100px 0;
+  max-width: 95%;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
 }
 
 .aside {
-    position: fixed;
-    width: 40%;
-    height: 100vh;
-    background: lightpink;
+  position: fixed;
+  width: 40%;
+  height: 100vh;
+  right: 0;
+  top: 50px;
+  background-color: #fa895f;
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
+@media (max-width: 768px) {
+  .aside {
     width: 100%;
-    height: 5em;
-    background: green;
+    height: 40%;
+    margin-top: 100%;
+  }
+  .content {
+    width: 90%;
+  }
+  .menu {
+    background-color: #fff;
+  }
+  .menu-list li a {
+    color: #000;
+  }
+  .menu .toggle-button {
+    display: block;
+  }
 }
-
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10%;
-    height: 100vh;
-    background: red;
-} */
+/*# sourceMappingURL=style.css.map */
